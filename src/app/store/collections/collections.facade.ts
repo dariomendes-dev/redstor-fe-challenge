@@ -10,7 +10,7 @@ export class CollectionsFacade {
 
   readonly collections$: Signal<ICollection[]> = this.store.selectSignal(CollectionsSelectors.selectCollections);
 
-  loadCollections() {
-    this.store.dispatch(CollectionsActions.loadCollections());
+  loadCollections(currentPage: number, photosPerPage: number) {
+    this.store.dispatch(CollectionsActions.loadCollections({currentPage: currentPage, photosPerPage: photosPerPage}));
   }
 }

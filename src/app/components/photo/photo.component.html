@@ -1,25 +1,28 @@
-<!-- toDo Could you optimise this piece of code? -->
-<mat-toolbar>
+<!-- toDo Could you optimise this piece of code? DONE -->
+<!-- <mat-toolbar>
   <span>Redstor FE Challenger</span>
-</mat-toolbar>
+</mat-toolbar> -->
+<app-title></app-title>
 
-<!-- toDo Could you optimise this piece of code? -->
-<div class="breadcrumbs">
+<!-- toDo Could you optimise this piece of code? DONE -->
+<!-- <div class="breadcrumbs">
   <a routerLink="/"><span>Collections</span></a>
   <span>></span>
   <a (click)="handleGotoCollection()"><span>Collection</span></a>
   <span>></span>
   <a class="active"><span>Photo</span></a>
-</div>
+</div> -->
+
+<app-breadcrumbs [breadcrumbs]="breadcrumbs"></app-breadcrumbs>
 
 <div class="layout-container">
   <!-- toDo Could you optimise this piece of code? -->
   <mat-progress-bar *ngIf="isLoading$ | async"></mat-progress-bar>
 
   <div class="gallery" fxLayout.sm="column">
-    <!-- toDO Could you improve the styling to be responsive? -->
+    <!-- toDO Could you improve the styling to be responsive? DONE -->
     <mat-card *ngIf="photo$ | async as photo" class="preview">
-      <!-- toDO Why is throwing some console errors? -->
+      <!-- toDO Why is throwing some console errors? - Trying to read values from initial empty object-->
 
       <mat-card-header>
         <img mat-card-avatar [src]="photo.user.profile_image.medium" />
@@ -34,7 +37,8 @@
         <div>
           <div>
             <!-- toDO Is there another way to do this operation? -->
-            <p>{{ photo.description?.charAt(0)?.toUpperCase() }}{{ photo.description?.slice(1) }}</p>
+            <!-- <p>{{ photo.description?.charAt(0)?.toUpperCase() }}{{ photo.description?.slice(1) }}</p> -->
+            <p>{{ photo.description | upperCaseFirst }}</p>
           </div>
           <div fxLayout="row" fxLayoutGap="12px" fxLayoutAlign="end">
             <p fxLayoutAlign="center">
@@ -46,8 +50,9 @@
           </div>
         </div>
       </mat-card-content>
-
-      <img mat-card-image [src]="photo.urls.full" [alt]="photo.alt_description" />
+      <div class="img-container">
+        <img mat-card-image [src]="photo.urls.full" [alt]="photo.alt_description" />
+      </div>
     </mat-card>
   </div>
 </div>

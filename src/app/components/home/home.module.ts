@@ -1,4 +1,4 @@
-import { MatCardModule } from '@angular/material/card';
+/* import { MatCardModule } from '@angular/material/card';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { CommonModule } from '@angular/common';
@@ -12,3 +12,4 @@ import { RouterModule } from '@angular/router';
   exports: [HomeComponent]
 })
 export class HomeModule {}
+ */

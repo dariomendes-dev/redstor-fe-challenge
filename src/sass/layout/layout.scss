@@ -41,6 +41,9 @@
   display: flex;
   flex-direction: row;
 
+  overflow: hidden;
+  box-sizing: border-box;
+
   .gallery-item {
     margin: 12px;
     border-radius: 12px;
@@ -52,5 +55,34 @@
       transform: translate3d(0, 0, 0);
       transition: background 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
     }
+  }
+
+  .preview {
+    width: 100%;
+    max-height: 86vh;
+  }
+
+  .img-container {
+    overflow: hidden;
+  }
+
+  .img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; //ensures the image fits without distortion
+  }
+
+}
+
+.pagination {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 16px;
+  align-items: center;
+
+  .per-page-select {
+    width: 300px;
   }
 }

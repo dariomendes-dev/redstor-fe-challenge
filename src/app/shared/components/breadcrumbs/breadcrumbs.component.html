@@ -1,0 +1,11 @@
+<div class="breadcrumbs">
+  <ng-container *ngFor="let item of breadcrumbs; let i = index">
+    <a *ngIf="!item.path" class="active">
+      <span>{{ item.label }}</span>
+    </a>
+    <a *ngIf="item.path" (click)="clickBreadcrumb(item.path, item.id)">
+      <span>{{ item.label }}</span>
+    </a>
+    <span *ngIf="i < breadcrumbs.length - 1">></span>
+  </ng-container>
+</div>

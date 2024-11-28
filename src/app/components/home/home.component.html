@@ -1,12 +1,14 @@
 <!-- toDo Could you optimise this piece of code? -->
-<mat-toolbar>
+<!-- <mat-toolbar>
   <span>Redstor FE Challenger</span>
-</mat-toolbar>
+</mat-toolbar> -->
+<app-title pageTitle="Redstor FE Challenger"></app-title>
 
 <!-- toDo Could you optimise this piece of code? -->
-<div class="breadcrumbs">
+<!-- <div class="breadcrumbs">
   <a class="active"><span>Collections</span></a>
-</div>
+</div> -->
+<app-breadcrumbs [breadcrumbs]="breadcrumbs"></app-breadcrumbs>
 
 <div class="layout-container">
   <!-- toDo Could you optimise this piece of code? -->
@@ -14,14 +16,28 @@
 
   <div class="gallery">
     <!-- toDo Is there another way to rewrite this with new Angular 17 features? -->
+    <!--     <ng-container @for(collection of collections; track collection)> -->
     <ng-container *ngFor="let collection of collections">
       <!-- toDO Could you improve the styling to be responsive? -->
       <mat-card class="gallery-item thumbnails" [routerLink]="'/collection/' + collection.id">
-        <img mat-card-image [src]="collection.cover_photo.urls.small" [alt]="collection.cover_photo.description" />
+        <img mat-card-image class="collection-image" [src]="collection.cover_photo.urls.small" [alt]="collection.cover_photo.description" />
         <mat-card-content>
           <p class="title">{{ collection.title }}</p>
         </mat-card-content>
       </mat-card>
     </ng-container>
+  </div>
+  <div class="pagination">
+    <mat-form-field>
+      <mat-label>Displayed items</mat-label>
+      <mat-select class="per-page-select" (selectionChange)="changedPerPage($event)">
+        <mat-option [value]="10">10</mat-option>
+        <mat-option [value]="15">15</mat-option>
+        <mat-option [value]="30">30</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button mat-raised-button [disabled]="currentPage <= 1 && isLoading" (click)="previousPage()"><</button>
+    {{ currentPage }}
+    <button mat-raised-button [disabled]="isLoading" (click)="nextPage()">></button>
   </div>
 </div>

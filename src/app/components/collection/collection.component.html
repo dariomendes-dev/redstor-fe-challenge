@@ -1,18 +1,21 @@
 <!-- toDo Could you optimise this piece of code? -->
-<mat-toolbar>
+<!-- <mat-toolbar>
   <span>Redstor FE Challenger</span>
-</mat-toolbar>
+</mat-toolbar> -->
+<app-title [pageTitle]="pageTitle"></app-title>
 
-<!-- toDo Could you optimise this piece of code? -->
-<div class="breadcrumbs">
+<!-- toDo Could you optimise this piece of code? DONE -->
+<!-- <div class="breadcrumbs">
   <a routerLink="/"><span>Collections</span></a>
   <span>></span>
   <a class="active"><span>Collection</span></a>
-</div>
+</div> -->
+<app-breadcrumbs [breadcrumbs]="breadcrumbs"></app-breadcrumbs>
+ 
 
 <div class="layout-container">
   <!-- toDo Could you optimise this piece of code? -->
-  <mat-progress-bar *ngIf="isLoading$ | async"></mat-progress-bar>
+  <mat-progress-bar *ngIf="isLoading()"></mat-progress-bar>
 
   <div class="gallery">
     <!-- toDO Could you improve the styling to be responsive? -->

@@ -11,6 +11,7 @@ import { CollectionsEffects, metaReducers, reducers } from './store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { environment } from '@environments/environment';
+import { PipesModule } from './pipes/pipes.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,6 +19,7 @@ import { environment } from '@environments/environment';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    PipesModule,
 
     // Store
     // toDo Is there a way to load the store just for the module or component in use?
