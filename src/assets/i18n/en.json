@@ -1,0 +1,17 @@
+{
+    "home_title": "Redstor FE Challenge",
+    "collection_title": "Specific Collection",
+    "photo_details_title": "Photo Details",
+    "breadcrumbs": {
+      "collections": "Collections",
+      "collection": "Collection",
+      "photo": "Photo details"
+    },
+    "card": {
+      "likes": "Likes",
+      "views": "Views"
+    },
+    "pagination": {
+      "per_page": "Collections per page"
+    }
+  }

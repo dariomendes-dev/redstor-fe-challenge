@@ -2,7 +2,7 @@
 <!-- <mat-toolbar>
   <span>Redstor FE Challenger</span>
 </mat-toolbar> -->
-<app-title></app-title>
+<app-title [pageTitle]="pageTitle | translate"></app-title>
 
 <!-- toDo Could you optimise this piece of code? DONE -->
 <!-- <div class="breadcrumbs">
@@ -43,9 +43,9 @@
           <div fxLayout="row" fxLayoutGap="12px" fxLayoutAlign="end">
             <p fxLayoutAlign="center">
               <mat-icon inline>favorite</mat-icon>
-              {{ photo.likes }} likes &nbsp;|&nbsp;&nbsp;
+              {{ photo.likes + ' ' + ('card.likes' | translate) }} &nbsp;|&nbsp;&nbsp;
               <mat-icon inline>visibility</mat-icon>
-              {{ photo.views }} views
+              {{ photo.views + ' ' + ('card.views' | translate) }}
             </p>
           </div>
         </div>

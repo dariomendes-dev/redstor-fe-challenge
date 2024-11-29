@@ -7,10 +7,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { PhotoComponent } from './photo.component';
 import { SharedModule } from '@app/shared/shared.module';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [PhotoComponent],
-  imports: [CommonModule, RouterModule, MatToolbarModule, MatProgressBarModule, MatCardModule, MatIconModule, SharedModule],
+  imports: [CommonModule, RouterModule, MatToolbarModule, MatProgressBarModule, MatCardModule, MatIconModule, SharedModule, TranslatePipe],
   exports: [PhotoComponent]
 })
 export class PhotoModule {}

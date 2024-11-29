@@ -2,7 +2,7 @@
 <!-- <mat-toolbar>
   <span>Redstor FE Challenger</span>
 </mat-toolbar> -->
-<app-title pageTitle="Redstor FE Challenger"></app-title>
+<app-title [pageTitle]="pageTitle | translate"></app-title>
 
 <!-- toDo Could you optimise this piece of code? -->
 <!-- <div class="breadcrumbs">
@@ -29,7 +29,7 @@
   </div>
   <div class="pagination">
     <mat-form-field>
-      <mat-label>Displayed items</mat-label>
+      <mat-label>{{'pagination.per_page' | translate}}</mat-label>
       <mat-select class="per-page-select" (selectionChange)="changedPerPage($event)">
         <mat-option [value]="10">10</mat-option>
         <mat-option [value]="15">15</mat-option>

@@ -7,10 +7,11 @@ import { RouterModule } from '@angular/router';
 import { CollectionComponent } from './collection.component';
 import { MatIconModule } from '@angular/material/icon';
 import { SharedModule } from '@app/shared/shared.module';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [CollectionComponent],
-  imports: [CommonModule, RouterModule, MatToolbarModule, MatProgressBarModule, MatCardModule, MatIconModule, SharedModule],
+  imports: [CommonModule, RouterModule, MatToolbarModule, MatProgressBarModule, MatCardModule, MatIconModule, SharedModule, TranslatePipe],
   exports: [CollectionComponent]
 })
 export class CollectionModule {}

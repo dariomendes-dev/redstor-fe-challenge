@@ -1,0 +1,17 @@
+{
+    "page_title": "Desafio Redstor FE",
+    "collection_title": "Coleção Especifica",
+    "photo_details_title": "Detalhes da Foto",
+    "breadcrumbs": {
+      "collections": "Coleções",
+      "collection": "Coleção",
+      "photo": "Detalhes da foto"
+    },
+    "card": {
+      "likes": "Gostos",
+      "views": "Visualizações"
+    },
+    "pagination": {
+      "per_page": "Coleções por página"
+    }
+  }

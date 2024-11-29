@@ -12,6 +12,15 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { environment } from '@environments/environment';
 import { PipesModule } from './pipes/pipes.module';
+import { HttpClient, HttpClientModule, HttpHandler } from '@angular/common/http';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslatorService } from './services/translator.service';
+
+
+export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,6 +29,15 @@ import { PipesModule } from './pipes/pipes.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     PipesModule,
+    HttpClientModule,
+
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    }),
 
     // Store
     // toDo Is there a way to load the store just for the module or component in use?
@@ -27,7 +45,7 @@ import { PipesModule } from './pipes/pipes.module';
     EffectsModule.forRoot([CollectionsEffects]),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
-  providers: [],
+  providers: [TranslatorService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
